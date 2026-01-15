@@ -42,7 +42,18 @@ python3 -m sglang.launch_server \
     --port <port-number> \
     --attention-backend triton \
     --sampling-backend pytorch \
-    --mem-fraction-static 0.48
+    --mem-fraction-static <ram-fraction>
+```
+
+Example usage:
+
+```bash
+python3 -m sglang.launch_server \
+  --model-path /home/ysonale/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95 \
+  --port 30000 \
+  --attention-backend triton \
+  --sampling-backend pytorch \
+  --mem-fraction-static 0.48
 ```
 
 ### Language Model Configuration
