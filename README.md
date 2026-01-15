@@ -38,8 +38,8 @@ Before running any of the optimization scripts, launch the SGLang server with th
 
 ```bash
 python3 -m sglang.launch_server \
-    --model-path /path/to/Llama-3.2-3B-Instruct \
-    --port 30000 \
+    --model-path </path/to/model-name> \
+    --port <port-number> \
     --attention-backend triton \
     --sampling-backend pytorch \
     --mem-fraction-static 0.48
@@ -51,8 +51,8 @@ Update the language model configuration in both `mipro/mipro.py` and `opro/opro.
 
 ```python
 lm = dspy.LM(
-    model="openai/Llama-3.2-3B-Instruct",
-    api_base="http://localhost:30000/v1",
+    model="openai/<model-name>",
+    api_base="http://localhost:<port-number>/v1",
     api_key="dummy",
     max_tokens=1024,
     temperature=0.4,
